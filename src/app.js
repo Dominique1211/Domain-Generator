@@ -7,23 +7,24 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
+  document.querySelector("#test").innerHTML = testGen();
+};
 
-  document.querySelector("#test").innerHTML = test();
-  function test() {
-    let pronouns = ["the", "our"];
-    let adjs = ["great", "big"];
-    let nouns = ["jogger", "racoon"];
-    let domains = [".com", ".net", ".gov", ".dog"];
-
-    for (let pronoun of pronouns) {
-      for (let adj of adjs) {
-        for (let noun of nouns) {
-          for (let domain of domains) {
-            console.log(pronoun + adj + noun + domain);
-          }
+function testGen() {
+  let pronouns = ["the", "our"];
+  let adjs = ["great", "big"];
+  let nouns = ["jogger", "racoon"];
+  let domains = [".com", ".net", ".gov", ".dog"];
+  let testme = "";
+  for (let pronoun of pronouns) {
+    for (let adj of adjs) {
+      for (let noun of nouns) {
+        for (let domain of domains) {
+          testme += pronoun + adj + noun + domain + "<br>";
         }
       }
     }
   }
-  console.log("Hello Rigo from the console!");
-};
+  return testme;
+}
+console.log("Hello Rigo from the console!");
